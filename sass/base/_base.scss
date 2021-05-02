@@ -1,0 +1,19 @@
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    /* make the property on the #body selector inherited for every element */
+    box-sizing: inherit;
+}
+
+html {
+    /* reference value for the "rem" values in the document */
+    /* the desired font-size is 10px, the browser default is 16px */
+    // This is more of a global value for "rem" values than "typography"
+    font-size: 62.5%;
+}
+
+body {
+    box-sizing: border-box;
+}

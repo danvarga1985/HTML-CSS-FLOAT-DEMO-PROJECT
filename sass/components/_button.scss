@@ -1,0 +1,65 @@
+.btn {
+    &:link,
+    &:visited {
+        text-transform: uppercase;
+        text-decoration: none;
+        padding: 1.5rem 4rem;
+        display: inline-block;
+        /* rounded corners */
+        border-radius: 10rem;
+        /* all properties are enabled to be animated */
+        transition: all 0.2s;
+        /* set to relative, so that ".btn::after" won't refer to header */
+        position: relative;
+        font-size: 1.6rem;
+    }
+
+    &:hover {
+        /* Upon hover, the button goes slightly up */
+        transform: translateY(-0.3rem);
+        box-shadow: 0 0.5rem 1rem rgba($color-black, 0.2);
+
+        &::after {
+            /* change the size in different directions */
+            transform: scaleX(1.4) scaleY(1.6);
+            /* fade it out */
+            opacity: 0;
+        }
+    }
+
+    &:active {
+        /* When clicked on the button, it already went 3px up (hover) - upon click it goes down 2px compared to the hover state */
+        transform: translateY(-0.1rem);
+    }
+
+    &--white {
+        background-color: $color-white;
+        color: $color-grey-dark;
+      
+        &::after {
+            background-color: $color-white;
+        }
+    }
+
+    &::after {
+        /* #content is empty because its needed only for the white background */
+        content: "";
+        display: inline-block;
+        height: 100%;
+        width: 100%;
+        border-radius: 10rem;
+        /* absolute compared to parent element (".btn:visited") */
+        position: absolute;
+        top: 0;
+        left: 0;
+        /* so that the text in the button is not covered by this */
+        z-index: -1;
+        transition: all 0.4s;
+    }
+
+    &--animated {
+        animation: moveInButton 0.5s ease-out 0.75s;
+        /* automatically apply the styles of the 0% before the animation starts - no more split-second visibility on screen during rendering */
+        animation-fill-mode: backwards;
+    }
+}

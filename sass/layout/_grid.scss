@@ -1,6 +1,5 @@
 .row {
     max-width: $grid-width;
-    background-color: gold;
     margin: 0 auto;
 
     &:not(:last-child) {
@@ -11,7 +10,6 @@
 
     // Select all element, where the class attribute starts with "col-"
     [class^="col-"] {
-        background-color: mediumaquamarine;
         float: left;
 
         &:not(:last-child) {
@@ -48,7 +46,8 @@
     .col-3-of-4 {
         // (#.col-1-of-4 multiplied by 3) + #gutter multiplied by 2 - see image
         width: calc(
-            3 * ((100% - (#{$gutter-horizontal * 3}))) / 4 + 2 * (#{$gutter-horizontal})
+            3 * ((100% - (#{$gutter-horizontal * 3}))) / 4 + 2 *
+                (#{$gutter-horizontal})
         );
     }
 }

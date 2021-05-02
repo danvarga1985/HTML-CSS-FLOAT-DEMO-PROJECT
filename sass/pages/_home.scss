@@ -1,0 +1,6 @@
+.section-about {
+    background-color: $color-grey-light-1;
+    padding: 25rem 0;
+    // We want the grey padding to "slide" under the image above.
+    margin-top: -20vh;
+}

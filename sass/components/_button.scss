@@ -41,6 +41,15 @@
         }
     }
 
+    &--green {
+        background-color: $color-primary;
+        color: $color-white;
+
+        &::after {
+            background-color: $color-primary;
+        }
+    }
+
     &::after {
         /* #content is empty because its needed only for the white background */
         content: "";

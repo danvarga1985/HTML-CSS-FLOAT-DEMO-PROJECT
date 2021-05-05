@@ -17,7 +17,7 @@
     &:hover {
         /* Upon hover, the button goes slightly up */
         transform: translateY(-0.3rem);
-        box-shadow: 0 0.5rem 1rem rgba($color-black, 0.2);
+        box-shadow: $shadow-2;
 
         &::after {
             /* change the size in different directions */
@@ -84,7 +84,7 @@
     }
 
     &:active {
-        box-shadow: 0 .5rem 1rem rgba($color-black, 0.15);
+        box-shadow: $shadow-2;
         transform: translateY(0px);
     }
 }

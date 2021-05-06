@@ -6,7 +6,7 @@
         padding: 1.5rem 4rem;
         display: inline-block;
         /* rounded corners */
-        border-radius: 10rem;
+        border-radius: $large-border;
         /* all properties are enabled to be animated */
         transition: all 0.2s;
         /* set to relative, so that ".btn::after" won't refer to header */
@@ -34,7 +34,7 @@
 
     &--white {
         background-color: $color-white;
-        color: $color-grey-dark;
+        color: $color-grey-dark-1;
 
         &::after {
             background-color: $color-white;
@@ -56,7 +56,7 @@
         display: inline-block;
         height: 100%;
         width: 100%;
-        border-radius: 10rem;
+        border-radius: $large-border;
         /* absolute compared to parent element (".btn:visited") */
         position: absolute;
         top: 0;

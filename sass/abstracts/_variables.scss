@@ -11,7 +11,8 @@ $color-tertiary-dark: #5643fa;
 
 $color-grey-light-1: #f7f7f7;
 $color-grey-light-2: #eee;
-$color-grey-dark: #777;
+$color-grey-dark-1: #777;
+$color-grey-dark-2: #999;
 $color-white: #fff;
 $color-black: #000;
 
@@ -26,3 +27,7 @@ $gutter-horizontal: 6rem;
 // SHADOW
 $shadow-1: 0 1.5rem 4rem rgba($color-black, 0.15);
 $shadow-2: 0 .5rem 1rem rgba($color-black, 0.2);
+
+// BORDER
+$small-border: 3px;
+$large-border: 10rem;

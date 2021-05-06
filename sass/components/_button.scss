@@ -1,4 +1,5 @@
 .btn {
+    &,
     &:link,
     &:visited {
         text-transform: uppercase;
@@ -12,6 +13,10 @@
         /* set to relative, so that ".btn::after" won't refer to header */
         position: relative;
         font-size: $default-font-size;
+
+        // Change for the <button> element
+        border: none;
+        cursor: pointer;
     }
 
     &:hover {
@@ -27,9 +32,12 @@
         }
     }
 
-    &:active {
+    &:active,
+    &:focus {
+        outline: none;
         /* When clicked on the button, it already went 3px up (hover) - upon click it goes down 2px compared to the hover state */
         transform: translateY(-0.1rem);
+        box-shadow: $shadow-2;
     }
 
     &--white {

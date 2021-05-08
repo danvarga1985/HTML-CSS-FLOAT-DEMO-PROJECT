@@ -1,3 +1,21 @@
+/*
+0 - 600px:      Phone
+600 - 900px:    Tablet portrait
+900 - 1280px:   Tablet landscape
+[1280 - 1800px] normal styles apply
+1800px + :      Big desktop
+
+
+$breakpoint argument choices:
+- phone
+- tab-port
+- tab-land
+- big-desktop
+
+ORDER: Base + typography > general layout + grid > page layout > components
+
+1em = 16px
+*/
 *,
 *::after,
 *::before {
@@ -11,6 +29,21 @@ html {
   /* reference value for the "rem" values in the document */
   /* the desired font-size is 10px, the browser default is 16px */
   font-size: 62.5%;
+}
+@media (max-width: 75em) {
+  html {
+    font-size: 56.25%;
+  }
+}
+@media (max-width: 56.25em) {
+  html {
+    font-size: 50%;
+  }
+}
+@media (min-width: 112.5em) {
+  html {
+    font-size: 75%;
+  }
 }
 
 body {

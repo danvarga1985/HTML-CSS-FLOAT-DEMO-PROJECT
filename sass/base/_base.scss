@@ -11,7 +11,21 @@ html {
     /* reference value for the "rem" values in the document */
     /* the desired font-size is 10px, the browser default is 16px */
     // This is more of a global value for "rem" values, rather than "typography"
-    font-size: 62.5%;
+    font-size: 62.5%; // 1rem = 10px; 10px/16px = 62.5%
+
+    @include respond(tab-land) {
+        // width < 1280?
+        font-size: 56.25%; // 1rem = 9px, 9/16 = 56.25%
+    }
+
+    @include respond(tab-port) {
+        // width < 900?
+        font-size: 50%; // 1rem = 8px, 8/16 = 50%
+    }
+
+    @include respond(big-desktop) {
+        font-size: 75%; // 1rem = 12px, 12/16
+    }
 }
 
 body {

@@ -47,7 +47,7 @@
     &__image {
         height: 100%;
         transform: translateX(-4rem) scale(1.4);
-        backface-visibility: hidden;
+        // backface-visibility: hidden;
         transition: all 0.5s;
     }
 
@@ -76,6 +76,7 @@
         transition: all 0.5s;
         // Fixes graphical gliths at the end of the hover-state
         backface-visibility: hidden;
+
     }
 
     &:hover &__caption {

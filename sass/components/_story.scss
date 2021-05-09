@@ -3,12 +3,23 @@
     margin: 0 auto;
     box-shadow: 0 3rem 6rem rgba($color-black, 0.1);
     // Only the background should be see-through, not the whole element
-    background-color: rgba($color-white, .6);
+    background-color: rgba($color-white, 0.6);
     border-radius: $small-border;
     padding: 6rem;
     padding-left: 9rem;
     font-size: $default-font-size;
     transform: skewX(-12deg);
+
+    @include respond(tab-port) {
+        width: 100%;
+        padding: 4rem;
+        padding-left: 7rem;
+        transform: skewX(0);
+    }
+
+    @include respond(phone) {
+        transform: skewX(0);
+    }
 
     &__shape {
         // In order for the text to "circle" the image, the #width, #height, #float and #shape-outside has to be declared
@@ -23,17 +34,33 @@
         // "skewX" only to offset the opposite effect set on the parent element
         transform: translateX(-3rem) skewX(12deg);
         position: relative;
+
+        @include respond(phone) {
+            transform: translateX(-3rem) skewX(0);
+        }
+
+        @include respond(tab-port) {
+            transform: translateX(-3rem) skewX(0);
+        }
     }
 
     &__image {
         height: 100%;
         transform: translateX(-4rem) scale(1.4);
         backface-visibility: hidden;
-        transition: all .5s;
+        transition: all 0.5s;
     }
 
     &__text {
         transform: skewX(12deg);
+
+        @include respond(phone) {
+            transform: skewX(0);
+        }
+
+        @include respond(tab-port) {
+            transform: skewX(0);
+        }
     }
 
     &__caption {

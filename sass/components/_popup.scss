@@ -10,6 +10,17 @@
     visibility: hidden;
     transition: all 0.3s;
 
+    // In case the browser supports #backdrop-filter, it will be used with a lighter background,
+    // Otherwise #backdrop-filter won't be used, just a darker background in place of the blur effect
+    // Graceful degradation
+    @supports (backdrop-filter: blur(10px)) or
+        (-webkit-backdrop-filter: blur(10px)) {
+        -webkit-backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        backdrop-filter: blur(10px);
+        background-color: rgba($color-black, 0.3);
+    }
+
     &__content {
         @include center-horizontal;
         width: 75%;
@@ -21,9 +32,9 @@
         // So that the image wont cover the rounded borders on the left side
         overflow: hidden;
         opacity: 0;
-        transform: translate(-50%, -50%) scale(.5);
+        transform: translate(-50%, -50%) scale(0.5);
         // The last property in the shorthand syntax is the delay - it lets the dark background come in first, before the popup box
-        transition: all .4s .2s;
+        transition: all 0.4s 0.2s;
     }
 
     &__left {
@@ -70,7 +81,7 @@
     // Style the child-element when "popup" becomes the "target"
     &:target &__content {
         opacity: 1;
-        transform: translate(-50%, -50%) scale(1)
+        transform: translate(-50%, -50%) scale(1);
     }
 
     &__close {

@@ -1,7 +1,7 @@
 // Header is treated as a "layout" element instead of "component"
 .header {
     /* 95% of the viewport height */
-    height: 95vh;
+    height: 85vh;
     background-image: linear-gradient(
             to right bottom,
             rgba($color-primary-light, 0.8),
@@ -13,13 +13,18 @@
     background-position: top;
     position: relative;
 
-    -webkit-clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
-    clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+    @supports (clip-path: polygon(0 0)) or (-webkit-clip-path: polygon(0 0)) {
+        -webkit-clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+        clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+        height: 95vh;
+    }
 
     // (In case of a high-density screen AND whenever the width is larger than 600px), OR
+    // on mac the screen is 2x, OR
     // above 2000px width -regardless of the pixel-density-
     // a larger image will be used
     @media (min-resolution: 192dpi) and (min-width: 37.5em),
+        (-webkit-min-device-pixel-ration: 2) and (min-width: 37.5em),
         (min-width: 125em) {
         background-image: linear-gradient(
                 to right bottom,

@@ -14,6 +14,8 @@
         top: 0;
         left: 0;
         width: 100%;
+        -webkit-backface-visibility: hidden;
+        -moz-backface-visibility: hidden;
         backface-visibility: hidden;
         border-radius: $small-border;
         // Makes "border-radius" apply to #card__picture - image won't overflow and cover the rounded corners

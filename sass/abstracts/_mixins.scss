@@ -38,25 +38,26 @@ ORDER: Base + typography > general layout + grid > page layout > components
     @if $breakpoint == phone {
         // In media queries "em" & "rem" are not effected by the root #font-size - they refer to the browser settings
         // "em" works better with browsers compared to "rem" - better option for media queries
-        @media (max-width: 37.5em) { // 600px
+        // only screen - rules only apply on screens (e.g. not for printed documents)
+        @media only screen and (max-width: 37.5em) { // 600px
             @content;
         }
     }
 
     @if $breakpoint == tab-port {
-        @media (max-width: 56.25em) { // 900px
+        @media only screen and (max-width: 56.25em) { // 900px
             @content;
         }
     }
 
     @if $breakpoint == tab-land {
-        @media (max-width: 75em) { // 1280px
+        @media only screen and (max-width: 75em) { // 1280px
             @content;
         }
     }
 
     @if $breakpoint == big-desktop {
-        @media (min-width: 112.5em) { // 1800px +
+        @media only screen and (min-width: 112.5em) { // 1800px +
             @content;
         }
     }
